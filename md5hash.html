@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD5 Hash Generator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <div>
+        </div>
+        <div>
+             <ul>
+                 <li>
+                     <a href="./index.html">URL Encode Decode</a>
+                     <a href="./base64encode.html">Base64 Encode</a>
+                     <a href="./base64decode.html">Base64 Decode</a>
+                     <a href="./md5hash.html">MD5 Hash Generator</a>
+                     <a href="./sha-1.html">SHA-1 Hash Generator</a>
+                     <a href="./sha-256.html">SHA-256 Generator</a>
+                     <a href="./sha-512.html">SHA-512 Generator</a>
+                 </li>
+             </ul>
+        </div>              
+    </header>
+
+    <section class="tools-container">
+        <div class ="showcase">
+            <h1> MD5 Hash Generator</h1>
+           <div class="input-section">
+                <input type ="text" id ="input-text" placeholder="Enter your string">
+                <input type ="text" id ="output-text" placeholder="Your result will be will appear here">
+           </div>
+           <div>
+                <input type="button" id ="generate" value="Generate">
+                <input type="button" id ="clear" value="Clear">
+           </div>
+        </div>
+        <div class ="top-box-a">
+            <h2>Related Tools</h2>
+
+        </div>
+    </section>
+    <section class="boxes">
+        <div class ="box">
+            <h3>What is MD5 Hash?</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi fugit, cupiditate at non sint obcaecati molestiae placeat fuga, tempore, dolorem temporibus sunt quibusdam vero ratione alias amet eaque ea atque!</p>
+        </div>
+        <div class ="box">
+            <h3>Encoding/Decoding a Piece of Text?</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea veritatis aperiam nulla quo temporibus similique. Quidem, eveniet labore. At illum recusandae, voluptatibus porro aliquid expedita. Dolore, a. Beatae, voluptatum nemo!</p>
+        </div>
+        <div class ="box">
+            <h3>When and why would you use MD5 Hash Value?</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae dolor inventore, ducimus sequi eos dolorum veniam atque similique autem laboriosam quam! Quo ex ad pariatur itaque fuga doloremque autem voluptatum.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Created by &copy; Aanchal Gupta</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <script>
+            const input = document.querySelector('#input-text');
+            const md5btn = document.querySelector('#generate');
+            const clearbtn = document.querySelector('#clear');
+            clearbtn.addEventListener('click', () => {
+                document.querySelector('#output-text').value = '';
+                document.querySelector('#input-text').value = '';
+            });
+            md5btn.addEventListener('click', () => {
+                const hash = CryptoJS.MD5(input.value);
+                document.querySelector('#output-text').value = hash.toString(CryptoJS.enc.Hex);
+            });
+    
+    </script>
+</body>
+</html>
