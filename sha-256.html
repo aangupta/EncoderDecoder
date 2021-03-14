@@ -5,62 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SHA-256 Hash Generator</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
-        <div>
+        <div class="hd-text">
+            <a style = "text-decoration: none;" href= "index.html" class = "title" > <h2>Encoder Decoder</h2></a>
         </div>
-        <div>
-             <ul>
-                 <li>
-                     <a href="./index.html">URL Encode Decode</a>
-                     <a href="./base64encode.html">Base64 Encode</a>
-                     <a href="./base64decode.html">Base64 Decode</a>
-                     <a href="./md5hash.html">MD5 Hash Generator</a>
-                     <a href="./sha-1.html">SHA-1 Hash Generator</a>
-                     <a href="./sha-256.html">SHA-256 Generator</a>
-                     <a href="./sha-512.html">SHA-512 Generator</a>
-                 </li>
-             </ul>
-        </div>  
-                    
+
+        <div class="topnav" id="myTopnav">
+            <a href="sha-256.html"class ='active'>SHA-256</a>
+            <a href="index.html">URL Encode Decode</a>
+            <a href="base64encode.html">Base64 Encode</a>
+            <a href="base64decode.html">Base64 Decode</a>
+            <a href="md5hash.html">MD5 Hash</a>
+            <a href="sha-1.html">SHA-1 Hash</a>
+            <a href="sha-512.html">SHA-512</a>
+            <a href= "https://utilityappmain.netlify.app/index.html" target="_blank" > Home</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fa fa-bars"></i>
+            </a>
+        </div>        
+        
     </header>
 
-    <section class="tools-container">
-        <div class ="showcase">
-            <h1> SHA-256 Hash Generator</h1>
-           <div class="input-section">
-                <input type ="text" id ="input-text" placeholder="Enter your string">
-                <input type ="text" id ="output-text" placeholder="Your result will be will appear here">
-           </div>
-           <div>
-                <input type="button" id ="generate" value="Generate">
-                <input type="button" id ="clear" value="Clear">
-           </div>
-        </div>
-        <div class ="top-box-a">
-            <h2>Related Tools</h2>
+    <div class="wrapper">
+        <div class="wrapper-left">
+            <h3>SHA-256 Hash Generator</h3>
+            <div class="wrapper-left">
+                <div class="input">
+                    <input type ="text" id ="input-text" placeholder="Enter your string">
+                    <input type ="text" id ="output-text" placeholder="Your result will be will appear here">
+                </div>
 
-        </div>
-    </section>
-    <section class="boxes">
-        <div class ="box">
-            <h3>What is SHA256 Hash?</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi fugit, cupiditate at non sint obcaecati molestiae placeat fuga, tempore, dolorem temporibus sunt quibusdam vero ratione alias amet eaque ea atque!</p>
-        </div>
-        <div class ="box">
-            <h3>Encoding/Decoding a Piece of Text?</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea veritatis aperiam nulla quo temporibus similique. Quidem, eveniet labore. At illum recusandae, voluptatibus porro aliquid expedita. Dolore, a. Beatae, voluptatum nemo!</p>
-        </div>
-        <div class ="box">
-            <h3>When and why would you use SHA256 Hash Value?</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae dolor inventore, ducimus sequi eos dolorum veniam atque similique autem laboriosam quam! Quo ex ad pariatur itaque fuga doloremque autem voluptatum.</p>
-        </div>
-    </section>
+                <div class="btn-group">
+                    <input type="button" id ="generate" value="Generate" class ='btn'>
+                    <input type="button" id ="clear" value="Clear" class='btn'>
+                </div>
 
+            </div>
+            <div class="wrapper-left">
+                <div class="box">
+                    <h3>What is SHA-256?</h3>
+                    <p>SHA-256 is a message-digest algorithm. It's used to compute a hash value in cryptography. So what's an hash function then? Simply put, a hash function takes a block of data and returns a fixed-size bit string (hash value). The data used by hash functions is referred to as a "message", while the computed hash value is referred to as the "message digest".</p>
+                </div>
+                <div class="box">
+                    <h3>When to use SHA-256?</h3>
+                    <p>SHA-256, like other hash functions, is used in digital signatures, message authentication codes, to index data in hash tables, for finger-printing, to detect duplicate data, uniquely identify files, and as checksums to detect accidental data corruption.</p>
+                </div>
+                <div class="box">
+                    <h3>How big is a SHA-256 hash value?</h3>
+                    <p>SHA-256 produces a 256-bit (32 bytes) hash value. It's usually represented as a hexadecimal number of 64 digits.</p>
+                </div>
+                <div class="box">
+                    <h3>How can I decrypt SHA-256?</h3>
+                    <p>You can't! SHA-256 is NOT an encryption algorithm! A lot of people are under the impression that SHA-256 encrypts data. It does no such thing. All it does is compute a hash value for a given set of data.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
     <footer>
-        <p>Created by &copy; Aanchal Gupta</p>
+        <div class="footer-text">
+            <h4>Made with <span class="fa fa-heart"></span> by Aanchal</h4>
+        </div>
+        <div class="footer-icons">
+            <ul>
+                <li> <a href="https://github.com/aangupta"class="fa fa-github"target="_blank" ></a></li>
+                <li> <a href="https://www.linkedin.com/in/aanchal-gupta-3ab35bb1/" class="fa fa-linkedin" target="_blank"></a></li>
+                <li><a href="https://twitter.com/aangupta5"class="fa fa-twitter"target="_blank"></a> </li>
+                <li> <a href="mailto: aanchalgupta457@gmail.com" class="fa fa-envelope" target="_blank"></a> </li>
+            </ul>
+            
+        </div>
     </footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/core.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/hmac.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/sha256.js"></script>
@@ -78,6 +98,16 @@
                 const hash = CryptoJS.SHA256(input.value);
                 document.querySelector('#output-text').value = hash.toString(CryptoJS.enc.Hex);
             });
+
+            function myFunction() {
+                var x = document.getElementById("myTopnav");
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "topnav";
+                }
+            }
+            
     
     </script>
 </body>

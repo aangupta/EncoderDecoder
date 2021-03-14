@@ -5,62 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SHA-1 Hash Generator</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
-        <div>
+        <div class="hd-text">
+            <a style = "text-decoration: none;" href= "index.html" class = "title" > <h2>Encoder Decoder</h2></a>
         </div>
-        <div>
-             <ul>
-                 <li>
-                     <a href="./index.html">URL Encode Decode</a>
-                     <a href="./base64encode.html">Base64 Encode</a>
-                     <a href="./base64decode.html">Base64 Decode</a>
-                     <a href="./md5hash.html">MD5 Hash Generator</a>
-                     <a href="./sha-1.html">SHA-1 Hash Generator</a>
-                     <a href="./sha-256.html">SHA-256 Generator</a>
-                     <a href="./sha-512.html">SHA-512 Generator</a>
-                 </li>
-             </ul>
-        </div>   
-                    
+
+        <div class="topnav" id="myTopnav">
+            <a href="sha-1.html" class='active'>SHA-1 Hash</a>
+            <a href="index.html">URL Encode Decode</a>
+            <a href="base64encode.html">Base64 Encode</a>
+            <a href="base64decode.html">Base64 Decode</a>
+            <a href="md5hash.html">MD5 Hash</a>
+            <a href="sha-256.html">SHA-256</a>
+            <a href="sha-512.html">SHA-512</a>
+            <a href= "https://utilityappmain.netlify.app/index.html" target="_blank" > Home</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fa fa-bars"></i>
+            </a>
+        </div>        
     </header>
 
-    <section class="tools-container">
-        <div class ="showcase">
-            <h1> SHA-1 Hash Generator</h1>
-           <div class="input-section">
+    <div class="wrapper">
+        <div class="wrapper-left">
+            <h3> SHA-1 Hash Generator</h3>
+            <div class="input">
                 <input type ="text" id ="input-text" placeholder="Enter your string">
                 <input type ="text" id ="output-text" placeholder="Your result will be will appear here">
-           </div>
-           <div>
-                <input type="button" id ="generate" value="Generate">
-                <input type="button" id ="clear" value="Clear">
-           </div>
-        </div>
-        <div class ="top-box-a">
-            <h2>Related Tools</h2>
+            </div>
 
+            <div class="btn-group">
+                <input type="button" id ="generate" value="Generate" class = 'btn'>
+                <input type="button" id ="clear" value="Clear" class='btn'>
+            </div>
         </div>
-    </section>
-
-    <section class="boxes">
-        <div class ="box">
-            <h3>What is SHa1 Hash?</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi fugit, cupiditate at non sint obcaecati molestiae placeat fuga, tempore, dolorem temporibus sunt quibusdam vero ratione alias amet eaque ea atque!</p>
+        <div class="wrapper-left">
+            <div class="box">
+                <h3>What is a SHA-1 Hash?</h3>
+                <p>SHA-1 (Secure Hash Algorithm) is a 160 bit cryptographic hash function created by the NSA in 1995. It creates a 40 byte hash value for the input of the algorithm. SHA-1 is one-way, meaning that the original input cannot be be determined simply by knowing the hash value. SHA-1 was designed to be collision resistant, meaning that two inputs could not have the same hash value.</p>
+            </div>
+            <div class="box">
+                <h3>When and why would you use SHA-1 Hash?</h3>
+                <p>SHA-1 is often used as a checksum algorithm. Text or files are fed into the MD5 algorithm and the resulting hash would change if the file had been changed. This is done to detect malicious tampering, or file corruption.
+                <br>
+                <br>
+                SHA-1 has also historically been used as a password hashing algorithm. Password hashing algorithms allow a password to be stored, in a website's database for instance, without having to store the actual password. This makes it more difficult to steal passwords, and if the hash is taken, the user's password is not necessarily compromised. When using a hashing algorithm for passwords it is wise to use "salt". With SHA-1, salt is added by concatinating a string unrelated to the password to the user supplied password string.</p>
+            </div>
         </div>
-        <div class ="box">
-            <h3>Encoding/Decoding a Piece of Text?</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea veritatis aperiam nulla quo temporibus similique. Quidem, eveniet labore. At illum recusandae, voluptatibus porro aliquid expedita. Dolore, a. Beatae, voluptatum nemo!</p>
-        </div>
-        <div class ="box">
-            <h3>When and why would you use SHA1 Hash Value?</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae dolor inventore, ducimus sequi eos dolorum veniam atque similique autem laboriosam quam! Quo ex ad pariatur itaque fuga doloremque autem voluptatum.</p>
-        </div>
-    </section>
+    </div>
+    
 
     <footer>
-        <p>Created by &copy; Aanchal Gupta</p>
+        <div class="footer-text">
+            <h4>Made with <span class="fa fa-heart"></span> by Aanchal</h4>
+        </div>
+        <div class="footer-icons">
+            <ul>
+                <li> <a href="https://github.com/aangupta"class="fa fa-github"target="_blank" ></a></li>
+                <li> <a href="https://www.linkedin.com/in/aanchal-gupta-3ab35bb1/" class="fa fa-linkedin" target="_blank"></a></li>
+                <li><a href="https://twitter.com/aangupta5"class="fa fa-twitter"target="_blank"></a> </li>
+                <li> <a href="mailto: aanchalgupta457@gmail.com" class="fa fa-envelope" target="_blank"></a> </li>
+            </ul>
+            
+        </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/core.js"></script>
@@ -81,6 +90,14 @@
                 console.log(hash);
                 document.querySelector('#output-text').value = hash.toString(CryptoJS.enc.Hex);
             });
+            function myFunction() {
+                var x = document.getElementById("myTopnav");
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "topnav";
+                }
+            }
     
     </script>
 </body>
